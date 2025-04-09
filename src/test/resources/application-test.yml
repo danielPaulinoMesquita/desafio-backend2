@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: '${SPRING_DATA_MONGODB_URI_TEST:mongodb://root:root@localhost:27017/resale_test?authSource=admin}'
+business:
+  rules:
+    minimum: "2"
+    attempts: 2

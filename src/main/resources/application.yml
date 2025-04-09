@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: 'teste-revenda'
+  data:
+    mongodb:
+      uri: '${SPRING_DATA_MONGODB_URI:mongodb://root:root@localhost:27017/resale?authSource=admin}'
+  task:
+    scheduling:
+      cron: 0 15 22 ? * *
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus,health,info,metrics"
+  endpoint:
+    health:
+      show-details: always
+business:
+  rules:
+    minimum: "1000"
+    attempts: 3
